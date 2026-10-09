@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jorge dans ta Poche</title>
+<meta name="description" content="Ton assistant d'atelier avec intelligence artificielle de Cuir &amp; Atelier : il connaît tes 179 patrons et t'aide à l'établi.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#3a2416">
+<meta name="apple-mobile-web-app-title" content="Jorge">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="jorge-icono.jpg">
+<link rel="icon" href="jorge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=1">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="marca">
+    <div class="avatar">
+      <img src="jorge.png" alt="" onerror="this.remove()">
+      <span class="iniciales">JG</span>
+    </div>
+    <div class="marca-texto">
+      <h1>Jorge dans ta Poche</h1>
+      <p>Cuir &amp; Atelier · en ligne</p>
+    </div>
+    <span class="etiqueta">Assistant IA</span>
+  </div>
+  <div class="acciones">
+    <div class="contador" id="contador" aria-live="polite"></div>
+    <button type="button" class="nuevo" id="nuevo" hidden>Nouveau chat</button>
+  </div>
+</header>
+
+<main class="hilo" id="hilo" role="log" aria-live="polite" aria-label="Conversation">
+
+  <section class="bienvenida" id="bienvenida">
+    <div class="avatar avatar-grande" aria-hidden="true">
+      <img src="jorge.png" alt="" onerror="this.remove()">
+      <span class="iniciales">JG</span>
+    </div>
+    <h2>Salut ! Moi, c'est Jorge. Qu'est-ce que tu as sur l'établi aujourd'hui ?</h2>
+    <p class="bajada">
+      Je connais tes 179 patrons et les 60 projets du Parcours de l'Artisan. Raconte-moi ce qui se passe,
+      envoie-moi une photo de ta pièce ou touche une de ces questions :
+    </p>
+    <div class="sugerencias">
+      <button class="sugerencia" type="button">Quelque chose a raté sur ma pièce. Je peux t'envoyer une photo ?</button>
+      <button class="sugerencia" type="button">Quel cuir, combien et quel fil pour le portefeuille BI-12 ?</button>
+      <button class="sugerencia" type="button">J'ai fini le projet n° 5 du parcours. Lequel je fais maintenant ?</button>
+      <button class="sugerencia" type="button">Je veux adapter un sac à dos à mon ordinateur portable. Comment je modifie le patron ?</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="pie">
+  <div class="adjunto" id="adjunto" hidden>
+    <img id="adjunto-img" alt="Photo à envoyer">
+    <button type="button" id="quitar-foto" aria-label="Retirer la photo">×</button>
+  </div>
+  <form class="compositor" id="compositor">
+    <button type="button" id="foto" class="boton-foto" aria-label="Prendre ou joindre une photo">
+      <svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true">
+        <path d="M4 8h3l2-2.5h6L17 8h3v11H4z" fill="none" stroke="currentColor"
+              stroke-width="1.9" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+      </svg>
+    </button>
+    <input type="file" id="archivo" accept="image/*" hidden>
+    <textarea id="entrada" rows="1" placeholder="Demande à Jorge…"
+              enterkeyhint="send" autocomplete="off"
+              aria-label="Demande à Jorge"></textarea>
+    <button type="submit" id="enviar" aria-label="Envoyer">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M12 20V5M5 12l7-7 7 7" fill="none" stroke="currentColor"
+              stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </form>
+  <p class="aviso">
+    Assistant avec intelligence artificielle : il peut se tromper. Avant de couper un cuir cher,
+    vérifie les mesures dans le tableau de ton patron et fais un essai sur du carton ou une chute.
+  </p>
+</div>
+
+<script src="app.js?v=1"></script>
+</body>
+</html>
